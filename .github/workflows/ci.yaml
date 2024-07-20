@@ -1,6 +1,5 @@
 name: CI
-  run: |
-    CI=false npm run build
+
 on:
   push:
     branches:
@@ -23,7 +22,8 @@ jobs:
         run: npm install
 
       - name: Build project
-        run: npm run build
+        run: |
+          CI=false npm run build
 
       - name: Archive build artifacts
         uses: actions/upload-artifact@v2
