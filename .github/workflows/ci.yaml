@@ -1,5 +1,6 @@
 name: CI
-
+  run: |
+    CI=false npm run build
 on:
   push:
     branches:
