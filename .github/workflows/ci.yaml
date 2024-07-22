@@ -52,5 +52,3 @@ jobs:
           git add build/ -f
           git commit -m 'Add build artifacts'
           git push https://${{ secrets.GH_PAT }}@github.com/anangfirmansyahputra/test-frontend-batch5.git HEAD:main
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
