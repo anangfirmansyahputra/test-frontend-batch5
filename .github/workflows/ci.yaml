@@ -51,6 +51,4 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add build/ -f
           git commit -m 'Add build artifacts'
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.KA_TOKEN }}
+          git push https://${{ secrets.GH_PAT }}@github.com/anangfirmansyahputra/test-frontend-batch5.git HEAD:main
