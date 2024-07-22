@@ -25,5 +25,5 @@ jobs:
           server: ${{ secrets.CPANEL_DOMAIN }}
           username: ${{ secrets.CPANEL_USER }}
           password: ${{ secrets.CPANEL_PASS }}
-          local-dir: build
+          local-dir: build/
           server-dir: /public_html
