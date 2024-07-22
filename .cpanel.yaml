@@ -1,5 +1,5 @@
 deployment:
   tasks:
     - export DEPLOYMENT_SOURCE=$PWD
-    - export DEPLOYMENT_TARGET=/home/yourcpaneluser/public_html
+    - export DEPLOYMENT_TARGET=/home/anae4363/public_html
     - /bin/cp -r $DEPLOYMENT_SOURCE/build/* $DEPLOYMENT_TARGET
