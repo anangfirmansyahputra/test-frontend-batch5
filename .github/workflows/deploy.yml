@@ -1,36 +1,16 @@
-name: Deploy to cPanel
-
-on:
-  push:
-    branches:
-      - main # Ganti dengan nama branch yang sesuai
-
+on: push
+name: 🚀 Deploy website on push
 jobs:
-  deploy:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          node-version: "20" # Versi Node.js yang sesuai
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run build
-
-      - name: Deploy to cPanel
-        env:
-          CPANEL_USER: ${{ secrets.CPANEL_USER }}
-          CPANEL_PASS: ${{ secrets.CPANEL_PASS }}
-          CPANEL_DOMAIN: ${{ secrets.CPANEL_DOMAIN }}
-        run: |
-          curl -u $CPANEL_USER:$CPANEL_PASS \
-               --ftp-create-dirs \
-               -T build/* \
-               ftp://$CPANEL_DOMAIN/public_html/
+          server: ${{ secrets.CPANEL_DOMAIN }}
+          username: ${{ secrets.CPANEL_USER }}
+          password: ${{ secrets.CPANEL_PASS }}
