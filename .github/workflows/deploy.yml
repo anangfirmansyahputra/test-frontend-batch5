@@ -1,5 +1,10 @@
-on: push
 name: 🚀 Deploy website on push
+
+on:
+  push:
+    branches:
+      - main # atau branch yang Anda inginkan
+
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -8,9 +13,12 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
 
-      - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: 📂 Sync files via SFTP
+        uses: appleboy/ftp-action@v1
         with:
-          server: ${{ secrets.CPANEL_DOMAIN }}
+          host: ${{ secrets.CPANEL_DOMAIN }}
           username: ${{ secrets.CPANEL_USER }}
           password: ${{ secrets.CPANEL_PASS }}
+          port: 22
+          local-dir: build/ # path ke folder build Anda
+          server-dir: /public_html/ # path di server SFTP tempat file akan di-deploy
