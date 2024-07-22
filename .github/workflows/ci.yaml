@@ -43,12 +43,13 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: build
-          path: build/ # tentukan path ke folder build Anda
 
       - name: Commit and push build artifacts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add build/ -f
           git commit -m 'Add build artifacts'
-          git push https://${{ secrets.GH_PAT }}@github.com/anangfirmansyahputra/test-frontend-batch5.git HEAD:main
+          git push
