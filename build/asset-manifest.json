@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.0bc53c2d.css",
-    "main.js": "/static/js/main.a4b6ecba.js",
+    "main.js": "/static/js/main.ca7520de.js",
     "static/media/MainLandingPageHero.png": "/static/media/MainLandingPageHero.30b380787ef7adb09eb6.png",
     "static/media/AgencyLandingPage.jpeg": "/static/media/AgencyLandingPage.717f8ed6737d6161b153.jpeg",
     "static/media/HotelTravelLandingPage.jpeg": "/static/media/HotelTravelLandingPage.7cba2215c02e6e82fc39.jpeg",
@@ -85,10 +85,10 @@
     "static/media/arrow-right-3-icon.svg": "/static/media/arrow-right-3-icon.5bf133930c89abdc6760c3a5dacf085b.svg",
     "static/media/handle-icon.svg": "/static/media/handle-icon.058b1c45d9adf0d47ce03b947bc6ac15.svg",
     "main.0bc53c2d.css.map": "/static/css/main.0bc53c2d.css.map",
-    "main.a4b6ecba.js.map": "/static/js/main.a4b6ecba.js.map"
+    "main.ca7520de.js.map": "/static/js/main.ca7520de.js.map"
   },
   "entrypoints": [
     "static/css/main.0bc53c2d.css",
-    "static/js/main.a4b6ecba.js"
+    "static/js/main.ca7520de.js"
   ]
 }
