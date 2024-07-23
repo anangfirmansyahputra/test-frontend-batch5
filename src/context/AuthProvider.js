@@ -20,12 +20,13 @@ export const AuthProvider = ({ children }) => {
 
   console.log(JSON.stringify(form));
   console.log("redirectPath", redirectPath);
-  
+
   const login = async () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        `http://localhost:8000/api/auth/customer/sign-in`,
+        // `http://localhost:8000/api/auth/customer/sign-in`,
+        `${process.env.REACT_APP_API_URL}/api/auth/sign-in`,
         JSON.stringify(form), // Send dataUser as JSON
         {
           headers: {

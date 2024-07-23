@@ -13,6 +13,10 @@ jobs:
       - name: 🚚 Checkout code
         uses: actions/checkout@v4
 
+      - name: 🔒 Setup .env file
+        run: |
+          echo "REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }}" >> .env
+
       - name: 📦 Install dependencies
         run: npm install
 
